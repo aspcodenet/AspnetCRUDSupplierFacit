@@ -1,0 +1,35 @@
+﻿@page
+@model AspnetCRUDSupplier.Pages.Suppliers.IndexModel
+@{
+}
+
+
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Namn</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var supplier in Model.Items)
+    {
+        <tr>
+            <td>@supplier.Name</td>
+            <td>
+                <a asp-page="Edit" asp-route-id="@supplier.Id" class="btn btn-primary">Edit</a>
+
+            </td>
+
+        </tr>
+    }
+    </tbody>
+    <tfooter>
+        <tr>
+            <td colspan="2">
+                <a asp-page="New" class="btn btn-primary">New</a>
+            </td>
+        </tr>
+    </tfooter>
+</table>
